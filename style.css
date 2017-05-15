@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: verdana;
+}
+.clear{
+	clear: both;
+}
+body{
+	background:
+	radial-gradient(black 15%, transparent 16%) 0 0,
+	radial-gradient(black 15%, transparent 16%) 8px 8px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+}
+main{
+	 width: 90%;
+	 height: auto;
+	 margin-top:60px;
+	 margin-left: 5%;
+	 background-color: white;
+	 box-shadow: 5px 5px 10px;
+	 margin-bottom: 60px;
+}
+main nav{
+	height: 50px;
+	background-color: lightgrey;
+}
+main nav h1{
+	height: 50px;
+	float:left;
+	margin:1% 0 0 2%;
+}
+main nav ul{
+	margin-left: 40%;
+}
+main nav ul li{
+	list-style-type: none;
+	float:left;
+}
+main nav ul li a{
+	display: block;
+	padding: 16px 20px 15px 20px;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+}
+main nav ul li a:hover{
+	padding: 14px 12px 14px 12px;
+	border-bottom: 3px solid red;
+	color: red;
+	background-color: white;
+	font-weight: bold;
+}
+main aside{
+	width: 20%;
+	float: left;
+	background-color: lightgrey;
+	height: 450px;
+}
+main aside ul li{
+	list-style-type: none;
+}
+main aside ul li a{
+	color: black;
+	text-decoration: none;
+	padding: 10px;
+	float: left;
+	border: 1px solid black;
+	margin: 10px;
+}
+main aside a{
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid red;
+}
+.button{
+	color: white;
+	background-color: black;
+	padding: 15px;
+	overflow: auto;
+	border: none;
+	font-size: 17px;
+	margin-bottom: 15px;
+}
+main section{
+	padding: 3%;
+}
+#welcome{
+	text-align: center;
+}
+#main500{
+	height: 500px;
+}
+.middle{
+	padding: 10% 0 10% 0;
+}
+b{
+	padding: 2%;
+	display: inline-block;
+}
+#code{
+	padding: 1%;
+}
+#submit{
+	background-color: black;
+	color: white;
+	padding: 1%;
+	border: none;
+	display: inline-block;
+}
+.unos{
+	margin: 1%;
+}
