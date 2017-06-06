@@ -121,3 +121,26 @@ b{
 #errorContainer {
     display: none;
 }
+
+.questionContainer {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.questionContainer > div {
+    flex: 1;
+}
+
+.qDetailsContainer {
+    
+}
+
+.userQContainer {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.qOptionsContainer {
+}

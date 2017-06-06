@@ -31,24 +31,34 @@
             </nav>
             <div class="clear"></div>
             <section>
-                <form id="quiz" name="quiz" action="skripta.php" method="POST">
-                    <div id="firstQuestion" data-qid="1">
-                        <h3>Question</h3>
-                        <textarea name="question" rows="5" cols="50"></textarea>
-                        <br/>
-                        <br/>
-                        <h3>Question type</h3>
-                        <select id="questionType" name="questionType">
-                            <option value="check">Checkbox</option>
-                            <option value="radio">Radiobutton</option>
-                            <option value="text">Text</option>
-                        </select>
-                        <br/>
-                        <br/>
-                        <div id="answerSheet">
+                <form id="quizForm" name="quiz" action="questions-action.php" method="POST">
+                    <h2><label for="pollName">Poll name:</label><input type="text" required="required" id="pollName"/></h2>
+                    <?php
+                        echo "<select id='pollCategory'>";
+                        $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    
+                    
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+                        $stmt = $conn->prepare("SELECT * FROM $categoryTable ORDER BY id");
                         
-                        </div>
-                    </div>
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+                        while ($row = $res->fetch_array(MYSQLI_ASSOC)) {
+                            $cid = $row['id'];
+                            $cname = $row['name'];
+                            echo "<option value='$cid'>$cname</option>";
+                        }
+                    
+                        echo "</select>";
+                        $stmt->close();
+                        $conn->close();
+                    ?>
+                    <br/>
+                    <label for="accessCode">Access code:</label><input type="text" required="required" id="accessCode"/>
+                    <div id="questionsContainer"></div>
+                    <button type="button" id="addQuestionBtn">Add question</button><br/>
                     <input class="button" type="submit" name="submit" value="Submit"/>
                 </form>
             </section>

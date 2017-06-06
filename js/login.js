@@ -41,7 +41,7 @@ $(document).ready(function() {
                     }
                 }
         }).fail(function(data,txt,err) {
-            errorDisplay.set('Prijava nije uspjela. Pokuöajte ponovno.'); 
+            errorDisplay.set('Prijava nije uspjela. Poku≈°ajte ponovno.'); 
             console.log('Server: ' + data.responseText + '; Klijent: ' + txt + ')\n');
         });
     });
