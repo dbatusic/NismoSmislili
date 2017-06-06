@@ -1,3 +1,13 @@
+<?php
+    require_once('config.php');
+    session_start();
+    
+    if (!isset($_SESSION['admin-login'])) {
+        header('Location: login.php');
+        die();
+    }
+    
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +22,11 @@
                 <ul>
                     <li><a href="login.php">Administration</a></li>
                     <li><a href="access.php">Quiz</a></li>
+                    <?php
+                        if (isset($_SESSION['admin-login'])) {
+                            echo "<li><a href='logout.php'>Logout</a></li>";
+                        }
+                    ?>
                 </ul>
             </nav>
             <div class="clear"></div>
