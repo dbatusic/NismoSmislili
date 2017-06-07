@@ -7,6 +7,7 @@
 	</head>
 	<body>
 		<main id="welcome">
+
             <nav>
                 <ul>
                     <li><a href="login.php">Administration</a></li>
@@ -93,6 +94,23 @@
                 $conn->close();
             ?>
             </div>
+
+	
+
 		</main>
 	</body>
 </html>
+
+<script type="text/javascript">
+	function validateForm() {
+		var poljecode = document.getElementById("code");
+		var x = document.forms["myForm"]["code"].value;
+		if (x == "") {
+		poljecode.style.border="1px solid red";
+		document.getElementById("code").innerHTML="Unesite kod!<br>";		
+		return false;
+		}
+		
+		
+}
+</script>

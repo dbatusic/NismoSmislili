@@ -19,12 +19,12 @@
                 <div id="errorContainer">
                     <p id="errorMessage"></p>
                 </div>
-                <form action="login-action.php" id="loginForm" method="post">
+                <form action="login-action.php" id="loginForm" method="post"  name="myForm" onclick="validateForm()">
                     <label for="username">Username</label>
-                    <input type="text" required="required" name="username" class="unos" id="username"/>
+                    <input type="text" name="username" class="unos" id="username"/>
                     <br/>
                     <label for="password">Password</label>
-                    <input type="password" required="required" class="unos" name="password" id="password"/>
+                    <input type="password" class="unos" name="password" id="password"/>
                     <br/>
                     <input type="submit" name="submit" id="submit" value="Log in"/>
                 </form>
@@ -35,3 +35,23 @@
         <script src="js/login.js"></script>
 	</body>
 </html>
+
+<script type="text/javascript">
+	function validateForm() {
+		var poljeusername = document.getElementById("username");
+		var x = document.forms["myForm"]["username"].value;
+		if (x == "") {
+		poljeusername.style.border="1px solid red";
+		document.getElementById("username").innerHTML="Unesite nadimak!<br>";		
+		return false;
+		}
+		var poljepassword = document.getElementById("password");
+		var y = document.forms["myForm"]["password"].value;
+		if (y == "") {
+		poljepassword.style.border="1px solid red";
+		document.getElementById("password").innerHTML="Unesite password!<br>";		
+		return false;
+		}
+		
+}
+</script>
